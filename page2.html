@@ -2,17 +2,45 @@
 <html>
 <head>
     <title>Campaign Posters</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .gallery img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
 </head>
+
 <body>
 
 <h1>Gallery Page</h1>
 
-<img src="poster1.png" width="300">
-<img src="poster2.png" width="300">
+<div class="gallery">
+    <img src="A4_colour_2copies_1normal_1glossy.png">
+    <img src="A4_colour_2copies_1normal_1glossy..png">
+</div>
 
-<br><br>
-
-<a href="./index.html">⬅ Back to Home</a>
+<a href="index.html">⬅ Back to Home</a>
 
 </body>
 </html>
