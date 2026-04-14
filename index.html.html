@@ -1,0 +1,128 @@
+<html>
+<head>
+<link rel="icon" type="image/png" href="Heraldic coat of arms with sapphires.png">
+<title>Dhakshitha-Campaign Page</title>
+
+<style>
+body {
+  background-image: url("Vote pl pls hcs.png");
+}
+
+/* POPUP */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Video box */
+.popup-content {
+  position: relative;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Reopen button */
+.reopen-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 15px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* Gallery button */
+.gallery-btn {
+  display: inline-block;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: 0.3s ease;
+}
+
+.gallery-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+</style>
+</head>
+
+<body>
+
+<!-- Reopen button -->
+<button class="reopen-btn" onclick="openPopup()">🎥 Watch Video</button>
+
+<!-- Popup -->
+<div class="popup" id="videoPopup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">×</span>
+
+    <video id="campVideo" width="100%" controls>
+      <source src="campaign vid.mp4" type="video/mp4">
+    </video>
+
+  </div>
+</div>
+
+<!-- Gallery button -->
+<a href="page2.html" class="gallery-btn">📸 Open Gallery</a>
+
+<script>
+// OPEN POPUP
+function openPopup() {
+  const popup = document.getElementById("videoPopup");
+  const video = document.getElementById("campVideo");
+
+  popup.style.display = "flex";
+  video.load();   // reset clean
+  video.play();   // start again
+}
+
+// CLOSE POPUP (FORCE STOP AUDIO)
+function closePopup() {
+  const popup = document.getElementById("videoPopup");
+  const video = document.getElementById("campVideo");
+
+  video.pause();
+  video.currentTime = 0;
+  video.removeAttribute("src"); // hard stop
+  video.load();
+
+  popup.style.display = "none";
+}
+
+// AUTO OPEN ON LOAD
+window.onload = function () {
+  openPopup();
+};
+</script>
+
+</body>
+</html>
